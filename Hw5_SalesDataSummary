@@ -1,0 +1,11 @@
+#Sales Data Summary
+sales = [1200, 3400, 560, 4500, 2100]
+n = len(sales)
+totalSales = sum(sales)
+averageSales = totalSales/n
+highestSale = max(sales)
+lowestSale = min(sales)
+print(f"Total Sales {totalSales}")
+print(f"Average Sales {averageSales}")
+print(f"Highest Sale {highestSale}")
+print(f"Lowest Sale {lowestSale}")

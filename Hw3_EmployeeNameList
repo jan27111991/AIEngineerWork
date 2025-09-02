@@ -1,0 +1,12 @@
+#List the Employee Names 
+employees = ["Alice", "Bob", "Charlie", "David", "Eve"] 
+#Using Range and fstrings
+"""
+noOfItems = len(employees)
+for item in range(noOfItems):
+    print(f"{item+1}.{employees[item]}")
+"""
+# Using Enumerate get both index and value
+for noOfItems,name in enumerate(employees,start=1):
+    print(f"{noOfItems}. {name}")
+

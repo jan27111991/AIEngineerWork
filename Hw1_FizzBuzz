@@ -1,0 +1,27 @@
+#FizzBuzz using Functions 
+def fizzbuzz(num):
+    """
+    Prints FizzBuzz for numbers divisible by both 3 and 5
+    Fizz for numbers divisible by 3 only
+    Buzz for numbers divisible by 5 only
+    and the number itself otherwise.
+    """
+    for i in range(1, num + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print((i))
+
+# Get input from user
+try:
+    num = int(input("Enter a positive integer: "))
+    if num <= 0:
+        print("Please enter a positive integer.")
+    else:
+        fizzbuzz(num)
+except ValueError:
+    print("Invalid input. Please enter a valid integer.")

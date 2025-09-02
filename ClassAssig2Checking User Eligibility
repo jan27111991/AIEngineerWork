@@ -1,0 +1,10 @@
+#Check User Eligibility
+age = int(input("enter your age"))
+print("User age is", age)
+experience = int(input("enter your experience"))
+print("User experience is", experience)
+if (age >= 22 and experience >= 2):
+    print("Access granted")
+else:
+    print("Access not granted")
+print("bye")
