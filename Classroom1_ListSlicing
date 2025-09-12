@@ -1,0 +1,20 @@
+marks = [78, 85, 62, 90, 55, 88]
+print ("Maximum marks: ", max(marks))
+print("Minimum marks: ", min(marks))
+print("Average marks: ", sum (marks)/len(marks))
+print("Distinction marks: ")
+for mark in marks:
+    if mark >=75:
+        print(mark)
+# Add new mark 
+marks.append(95) 
+print("After Adding 95:", marks)
+
+# Remove a mark 
+marks.remove(55) 
+print("After Removing 55:", marks)
+
+
+marks.sort(reverse=True)
+print("Sorted Marks:", marks)
+

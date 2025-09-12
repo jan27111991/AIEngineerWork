@@ -1,0 +1,13 @@
+prime_numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] 
+#Extracting a sublist from a list
+print("Middle five prime numbers: ", prime_numbers[2:7])
+#Every second prime number
+print("Every second prime number: ", prime_numbers[::2])
+#Use negative indexing
+print("Every last three primae numbers are: ", prime_numbers[-3:])
+#Reverse the list
+print("Reversed prime numbers: ", prime_numbers[::-1])
+
+#Sort the list in descending order 
+prime_numbers.sort(reverse=True)
+print("Prime numbers sorted in descending order:", prime_numbers)
