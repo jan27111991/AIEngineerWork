@@ -1,0 +1,57 @@
+class Employee:
+    def __init__(self, name, emp_id, department):
+        self.name = name
+        self.emp_id = emp_id
+        self.department = department
+    
+    def display_info(self):
+        print(f"Employee ID: {self.emp_id}")
+        print(f"Name: {self.name}")
+        print(f"Department: {self.department}")
+
+
+class Manager(Employee):
+    def __init__(self, name, emp_id, department, team_size):
+        super().__init__(name, emp_id, department)
+        self.team_size = team_size
+    
+    def display_info(self):
+        super().display_info()
+        print(f"Team Size: {self.team_size}")
+        print("-" * 30)
+
+
+class Developer(Employee):
+    def __init__(self, name, emp_id, department, programming_language):
+        super().__init__(name, emp_id, department)
+        self.programming_language = programming_language
+    
+    def display_info(self):
+        super().display_info()
+        print(f"Programming Language: {self.programming_language}")
+        print("-" * 30)
+
+
+if __name__ == "__main__":
+    # Create a Manager object
+    manager = Manager(
+        name="Sarah Johnson",
+        emp_id="M001",
+        department="Software Development",
+        team_size=8
+    )
+    
+    # Create a Developer object
+    developer = Developer(
+        name="Alex Chen",
+        emp_id="D105",
+        department="Software Development",
+        programming_language="Python"
+    )
+    
+    # Display information for both employees
+    print("Manager Information:")
+    manager.display_info()
+    
+    print("Developer Information:")
+    developer.display_info()
