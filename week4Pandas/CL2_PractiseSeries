@@ -20,3 +20,4 @@ print(f"\nSecond Test Time (using iloc): {second_test_time}")
 tc3_time = execution_times.loc['TC3']
 print(f"\nExecution Time of TC3 (using loc): {tc3_time}")
 
+
