@@ -1,0 +1,26 @@
+import pandas as pd
+import numpy as np
+#Create dataframe for array 1 = [10,20,30] array 2 = [30,40,50] using numpy arrays
+
+array1 = np.array([10, 20, 30])
+array2 = np.array([30, 40, 50])
+df = pd.DataFrame([array1, array2],columns=['A','B','C'])   
+print("DataFrame from Numpy Arrays:")   
+print(df)
+
+#Create a dataframe from panda series array 1 = [10,20,30] array 2 = [30,40,50] using series
+
+series1 = pd.Series([10, 20, 30])
+series2 = pd.Series([30, 40, 50])
+df_series = pd.DataFrame({'Column1': series1, 'Column2': series2})
+print("\nDataFrame from Pandas Series:")
+print(df_series)
+
+#Create a dataframe from dictionary  of series Mani : [10,20,30], Alex : [20,30]
+data_dict = {
+    'Mani': pd.Series([10, 20, 30]),
+    'Alex': pd.Series([20, 30])
+}
+df_dict = pd.DataFrame(data_dict)
+print("\nDataFrame from Dictionary:")
+print(df_dict)

@@ -1,0 +1,38 @@
+import pandas as pd
+import numpy as np
+data = [
+    ['TC1','Passed',12],
+    ['TC2','Failed',15],
+    ['TC3','Passed',20],
+    ['TC4','Failed',18],
+    ['TC5','Passed',25]
+]
+df = pd.DataFrame(data,columns=['TestCase','Status','Duration'])
+print("Original DataFrame:")        
+print(df)
+
+#print the status only 
+print("\nTest Status Column:")
+print(df['Status'])
+
+#Filters and prints only Failed test cases. 
+failed_tests = df[df['Status'] == 'Failed']
+print(failed_tests)
+
+#Saves the DataFrame as test_results.csv.
+df.to_csv('test_results.csv',index=False)   
+print("\nDataFrame saved to 'test_results.csv'")
+
+new_Data = [
+    ['TC6','Passed',22],
+    ['TC7','Failed',30]
+]
+
+df_new = pd.DataFrame(new_Data,columns=['TestCase','Status','Duration'])
+df_new.to_csv('test_results.csv',mode = 'a', header = False,index=False)
+#Reads the CSV back into a new DataFrame and prints it.
+read_df = pd.read_csv('test_results.csv')
+
+
+print('Read DataFrame from CSV:')
+print(read_df)

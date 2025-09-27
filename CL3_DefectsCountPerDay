@@ -1,0 +1,32 @@
+import pandas as pd
+#1.	Creates a Pandas Series for defects logged across 7 days:
+defects_count = pd.Series([5, 8, 3, 6, 10, 2, 7],index=[ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'])
+print("Defects Count Series:")
+print(defects_count)
+
+#2.	Prints the maximum defects logged in a single day.
+max_defects = defects_count.max()
+print(f"\nMaximum Defects in a Single Day: {max_defects}")
+
+#3.	Prints the minimum defects logged in a single day.
+min_defects = defects_count.idxmin()
+
+print(f"\nMinimum Defects in a Single Day: {min_defects}")
+
+#4	Uses iloc to print defect count of Day5.
+day5_defects = defects_count.iloc[4]
+print(f"\nDefect Count on Day5 (using iloc): {day5_defects}")
+
+
+#5	Uses loc to print defect count of Day5.
+day5_defects_loc = defects_count.loc['Fri']
+print(f"\nDefect Count on Day5 (using loc): {day5_defects_loc}")    
+#6.	Prints total defects logged in the week.
+total_defects = defects_count.sum()
+print(f"\nTotal Defects Logged in the Week: {total_defects}")
+
+
+
+
+
+

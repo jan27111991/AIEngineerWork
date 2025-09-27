@@ -1,0 +1,25 @@
+import pandas as pd
+import numpy as np
+# pandas_dataframe_grouping
+# Create a DataFrame with test results for different builds
+#Create a dataFrame for Creates a DataFrame: 
+data = {
+    'TestCase': ['TC1', 'TC2', 'TC3', 'TC4', 'TC5', 'TC6'],
+    'Module': [ 'Login', 'Login', 'Payment', 'Payment', 'Reports', 'Reports' ],
+    'Status': ['Passed', 'Failed', 'Passed', 'Failed', 'Passed', 'Passed'],
+    'Duration':[12,15,20,18,25,22]
+}
+df = pd.DataFrame(data)
+print("Original DataFrame:")        
+print(df)
+
+# Group by Status and count Passed vs Failed
+status_counts = df.groupby("Status")["TestCase"].count()
+print("Test Case Count by Status:")
+print(status_counts)
+    
+# Group by Module and find average Duration per module
+module_avg_duration = df.groupby('Module')['Duration'].mean()
+print("Average Duration by Module:")
+print(module_avg_duration)
+

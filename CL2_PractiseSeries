@@ -1,0 +1,22 @@
+import pandas as pd
+
+#Create series with labels 
+execution_times = pd.Series([12, 15, 20, 18, 25, 30, 22],index=['TC1','TC2','TC3','TC4','TC5','TC6','TC7'])
+print("Original Series:")
+print(execution_times)
+
+#Display first three in series 
+print(execution_times.head(3))
+
+#.	Finds the mean execution time.
+mean_time = execution_times.mean()
+print(f"\nMean Execution Time: {mean_time}")
+
+#	Uses iloc to print the 2nd test time.
+second_test_time = execution_times.iloc[1]
+print(f"\nSecond Test Time (using iloc): {second_test_time}")
+
+#	Uses loc to print execution time of TC3
+tc3_time = execution_times.loc['TC3']
+print(f"\nExecution Time of TC3 (using loc): {tc3_time}")
+

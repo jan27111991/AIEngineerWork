@@ -1,0 +1,31 @@
+import pandas as pd
+import numpy as np
+# pandas_dataframe_grouping
+# Create a DataFrame with test results for different builds
+#Create a dataFrame for Lists of List
+data = [
+    ['D1','Login','High','Open'],
+    ['D2','Payment','Medium','Closed'],
+    ['D3','Reports','Low','Open'],
+    ['D4','Login','High','Closed'],
+    ['D5','Payment','Medium','Open'],
+    ['D6','Reports','Low','InProgress']
+]
+df = pd.DataFrame(data,columns=['DefectID','Module','Priority','Status'])       
+print("Original DataFrame:")        
+print(df)
+
+#Prints all Open defects
+open_defects = df[df['Status'] == 'Open']
+print("\nOpen Defects:")
+print(open_defects)
+
+#Prints all High severity defects.
+high_severity_defects = df[df['Priority'] == 'High']
+print("\nHigh Severity Defects:")   
+print(high_severity_defects)
+
+#Counts how many defects are Open vs Closed.
+status_counts = df.groupby("Status")['DefectID'].count()
+print("\nDefect Count by Status:")  
+print(status_counts)

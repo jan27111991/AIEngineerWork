@@ -1,0 +1,36 @@
+import pandas as pd
+
+# Create a Pandas Series with test pass percentages 
+pass_rates = pd.Series(
+    [80, 85, 78, 90, 88],index=['B1', 'B2', 'B3', 'B4', 'B5']
+)
+
+# Print the Series
+print("Test Pass Percentage Series:")
+print(pass_rates)
+
+
+# print the average pass rate
+average_pass_rate = pass_rates.mean()
+print(average_pass_rate)
+
+
+# Build having the highest pass rate
+highest_build = pass_rates.idxmax()
+highest_rate = pass_rates.max()
+print(f"Build with highest pass rate: {highest_build} ({highest_rate}%)")
+
+
+# Use iloc to print pass rate of the last build
+last_build_rate = pass_rates.iloc[-1]
+print(f"Pass rate of the last build (using iloc): {last_build_rate}%")
+
+# Use loc to print pass rate of Build B3
+b3_rate = pass_rates.loc['B3']
+print(f"Pass rate of Build B3 (using loc): {b3_rate}%")
+
+
+# Normalize values by subtracting average from each pass rate
+normalized_rates = pass_rates - average_pass_rate
+print("Normalized Pass Rates (each rate minus average):")
+print(normalized_rates)
