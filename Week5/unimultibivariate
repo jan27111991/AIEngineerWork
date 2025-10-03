@@ -1,0 +1,29 @@
+# pandas_univariate_bivariate.py
+
+import pandas as pd
+
+#Load CSV Data
+df = pd.read_csv(r"C:\Users\Janani\Documents\AI Engineer\Programming\Python\code\Week5\testresults.csv")
+print("===== Raw Data =====")
+print(df, "\n")
+
+#Univariate analysis
+print("===== Univariate Analysis: Duration =====")
+print(df["Duration"].describe(), "\n")
+
+print(f"Mean Duration: {df['Duration'].mean():.2f}")
+print(f"Median Duration: {df['Duration'].median():.2f}")
+print(f"Standard Deviation of Duration: {df['Duration'].std():.2f}\n")
+
+# Bivariate Analysis 
+print("Bivariate Analysis: Status vs Duration ")
+avg_duration_by_status = df.groupby("Status")["Duration"].mean()
+print("Average Duration grouped by Status:")
+print(avg_duration_by_status, "\n")
+
+# Multivariate Analysis (3+ variables: Module, Status, Defects)
+# -----------------------------
+print("===== Multivariate Analysis: Module, Status, and Defects =====")
+defects_by_module_status = df.groupby(["Module", "Status"])["Defects"].sum()
+print("Total Defects grouped by Module and Status:")
+print(defects_by_module_status, "\n")

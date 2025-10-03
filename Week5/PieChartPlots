@@ -1,0 +1,32 @@
+import pandas as pd
+
+# Create the DataFrame
+data = {
+    'Module': ['AI', 'ML', 'Python', 'DataStructures'], 
+    'Teamsize': [135, 125, 125, 115]
+}
+
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df)
+print("\n" + "="*50 + "\n")
+
+# Set 'Module' as index for better labeling
+df.set_index('Module', inplace=True)
+
+print("DataFrame with Module as index:")
+print(df)
+print("\n" + "="*50 + "\n")
+
+# 1. Basic Pie Chart
+print("1. Basic Pie Chart:")
+pie_plot = df.plot(kind='pie', 
+                   y='Teamsize',
+                   title='Team Size Distribution by Module',
+                   figsize=(20, 10),
+                   frame = True,
+                   legend=True,
+                   autopct='%1.1f%%')
+pie_plot.figure.savefig('pie_chart.png')  # Save the figure as a PNG file
+print("\n" + "="*50 + "\n")

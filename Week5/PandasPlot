@@ -1,0 +1,59 @@
+import pandas as pd
+
+# Read data from CSV file
+file_path = r"C:\Users\Janani\Downloads\data1.csv"
+df = pd.read_csv(file_path)
+
+print("Original DataFrame from CSV:")
+print(df)
+print("\n" + "="*50 + "\n")
+
+# Set 'Day' as index and reorder columns for better visualization
+df.set_index('Day', inplace=True)
+
+print("DataFrame after setting 'Day' as index:")
+print(df)
+print("\n" + "="*50 + "\n")
+
+# 1. Line Plot using pandas
+print("1. Line Plot:")
+line_plot = df.plot(kind='line', 
+                   title='Weekly Trends - Line Plot',
+                   ylabel='Values',
+                   xlabel='Day',
+                   marker='o',
+                   figsize=(10, 6),
+                   grid=True)
+
+line_plot.figure.savefig('line_plot.png')  # Save the figure as a PNG file
+print("\n" + "="*50 + "\n")
+
+# 2. Bar Plot using pandas
+print("\n2. Bar Plot:")
+bar_plot = df.plot(kind='bar',
+                  title='Weekly Comparison - Bar Plot',
+                  ylabel='Values',
+                  xlabel='Day',
+                  figsize=(10, 6),
+                  width=0.8)
+bar_plot
+
+bar_plot.figure.savefig('bar_plot.png')  # Save the figure as a PNG file
+print("\n" + "="*50 + "\n")
+
+# 3. Histogram using pandas - using all values from all weeks
+print("\n3. Histogram:")
+# Create a Series with all values for histogram
+all_values = pd.Series(df.values.flatten())
+hist_plot = all_values.plot(kind='hist',
+                           title='Distribution of All Values - Histogram',
+                           xlabel='Value Ranges',
+                           ylabel='Frequency',
+                           figsize=(10, 6),
+                           bins=10,
+                           grid=True,
+                           color='lightgreen',
+                           edgecolor='black')
+hist_plot
+hist_plot.figure.savefig('histogram.png')  # Save the figure as a PNG file
+print("\n" + "="*50 + "\n")

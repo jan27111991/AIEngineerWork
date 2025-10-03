@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+import numpy as np
+Weeks = np.array([1, 2, 3, 4, 5, 6])
+Defects = np.array([5, 8, 6, 10, 7, 4])
+plt.plot(Weeks, Defects, marker='o', linestyle='dashed', color='b')
+plt.xlabel("Week Number")
+plt.ylabel("Number of Defects")
+plt.title("Defects Trend Over Time")
+plt.grid(True)
+plt.show()  

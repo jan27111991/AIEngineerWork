@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+
+defect_counts = [10, 15, 5]  # High, Medium, Low
+
+labels = ["High", "Medium", "Low"]
+
+plt.pie(defect_counts, labels=labels, autopct='%1.1f%%')
+
+plt.title("Defect Distribution by Severity")
+
+# Display the chart
+plt.show()

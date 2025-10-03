@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+
+testStatus = ['Passed', 'Failed', 'Skipped']
+noOfCases = [45,10,5]
+
+plt.bar(testStatus, noOfCases,width=0.7,edgecolor='black', color=['green', 'red', 'blue'])
+plt.xlabel("Test Status")
+plt.ylabel("Number of Test Cases")
+plt.title("Test Execution Results", fontname='Arial', fontsize=16, fontweight='bold')
+plt.savefig('barchart.png')  # Save the figure as a PNG file
+plt.show()
