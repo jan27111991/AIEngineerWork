@@ -1,0 +1,11 @@
+build_id,date,environment,predicted_defects,actual_defects,error
+B001,01-10-2025,linux,6,6,0
+B002,02-10-2025,linux,1.55,2,-0.45
+B003,03-10-2025,windows,10,10,0
+B004,04-10-2025,macos,1,1,0
+B005,05-10-2025,linux,5,5,0
+B006,06-10-2025,windows,10.77,13,-2.23
+B007,07-10-2025,macos,3,3,0
+B008,08-10-2025,linux,8,8,0
+B009,09-10-2025,windows,4,4,0
+B010,10-10-2025,macos,0,0,0
